@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nawraj Budhathoki is a CSIT student and aspiring software developer. Explore his portfolio, skills, projects, and journey in computer science.">
+    <meta name="keywords" content="Nawraj Budhathoki, Nawraj, CSIT student, computer science, IT student, portfolio, Nepal, software developer">
+    <meta name="author" content="Nawraj Budhathoki">
+
+    <meta property="og:title" content="Nawraj Budhathoki | CSIT Student Portfolio">
+    <meta property="og:description" content="Welcome to the portfolio of Nawraj Budhathoki, a CSIT student interested in technology, programming, and software development.">
+    <meta property="og:type" content="website">
+
+    <title>Nawraj Budhathoki | CSIT Student Portfolio</title>
+
+    <style>
+        /* ------------------------------
+           General Styles
+        ------------------------------ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ------------------------------
+           Navigation
+        ------------------------------ */
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #374151;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* ------------------------------
+           Hero Section
+        ------------------------------ */
+
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .welcome {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #6b7280;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+            border: 1px solid #2563eb;
+            transition: 0.2s ease;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+        }
+
+        .secondary {
+            color: #2563eb;
+            background: white;
+        }
+
+        .secondary:hover {
+            background: #eff6ff;
+        }
+
+        /* ------------------------------
+           About Section
+        ------------------------------ */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #4b5563;
+        }
+
+        /* ------------------------------
+           Skills
+        ------------------------------ */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .skill-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* ------------------------------
+           Projects
+        ------------------------------ */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* ------------------------------
+           Contact
+        ------------------------------ */
+
+        .contact {
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        .contact h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        .contact .button {
+            background: white;
+            color: #111827;
+            border-color: white;
+        }
+
+        .contact .button:hover {
+            background: #e5e7eb;
+        }
+
+        /* ------------------------------
+           Footer
+        ------------------------------ */
+
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* ------------------------------
+           Mobile
+        ------------------------------ */
+
+        @media (max-width: 700px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .skills,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav aria-label="Main navigation">
+                <a href="#home" class="logo">Nawraj Budhathoki</a>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Welcome / Hero -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+
+                    <span class="welcome">Welcome to my portfolio</span>
+
+                    <h1>
+                        Hi, I'm <span>Nawraj Budhathoki</span>
+                    </h1>
+
+                    <p>
+                        A CSIT student interested in programming, technology,
+                        and building useful software projects.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="#projects" class="button primary">
+                            View My Projects
+                        </a>
+
+                        <a href="#about" class="button secondary">
+                            Learn More
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <p>A little introduction</p>
+                </div>
+
+                <div class="about-box">
+                    <p>
+                        My name is Nawraj Budhathoki and I am a Computer
+                        Science and Information Technology (CSIT) student.
+                        I enjoy learning about programming, web development,
+                        software, and modern technology. This portfolio
+                        showcases my learning journey, skills, and projects.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>My Skills</h2>
+                    <p>Technologies and areas I am learning</p>
+                </div>
+
+                <div class="skills">
+
+                    <article class="skill-card">
+                        <h3>Programming</h3>
+                        <p>
+                            Learning programming concepts, problem solving,
+                            and writing clean code.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <h3>Web Development</h3>
+                        <p>
+                            Building websites using HTML, CSS, and JavaScript.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <h3>Computer Science</h3>
+                        <p>
+                            Exploring data structures, algorithms, databases,
+                            and software development.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Projects</h2>
+                    <p>Some things I have worked on or plan to build</p>
+                </div>
+
+                <div class="projects">
+
+                    <article class="project-card">
+                        <h3>Personal Portfolio</h3>
+                        <p>
+                            A simple personal website created to showcase
+                            my skills, projects, and learning journey.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Student Project</h3>
+                        <p>
+                            A project developed as part of my CSIT studies
+                            to practice programming and software development.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Future Project</h3>
+                        <p>
+                            More projects will be added as I continue
+                            learning and developing new skills.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <h2>Let's Connect</h2>
+
+                <p>
+                    Interested in my work or want to get in touch?
+                </p>
+
+                <!-- Replace the email address with your real email -->
+                <a
+                    href="mailto:your-email@example.com"
+                    class="button"
+                >
+                    Contact Me
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; <span id="year"></span> Nawraj Budhathoki.
+            All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Automatically update the copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
